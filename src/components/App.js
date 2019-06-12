@@ -26,7 +26,11 @@ class App extends React.Component {
           {error && <Error error={error} />}
           {fetching && <Fetching />}
           {!message && !error && !fetching && <Init />}
-          <Form fetchMessage={this.fetchMessage} inputField={this.inputField} />
+          <Form
+            fetchMessage={this.fetchMessage}
+            inputField={this.inputField}
+            fetching={fetching}
+          />
         </header>
       </div>
     );
