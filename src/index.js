@@ -9,6 +9,7 @@ import { store } from './store'
 import App from './components/App';
 // import styles
 import './styles/index.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 // import serviceWorker
 import * as serviceWorker from './serviceWorker';
 
