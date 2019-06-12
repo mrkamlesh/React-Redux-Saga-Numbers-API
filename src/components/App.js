@@ -7,6 +7,7 @@ import Message from "./Message";
 import Error from "./Error";
 import Fetching from "./Fetching";
 import Init from "./Init";
+import Header from "./Header";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Header />
           {message && <Message message={message} />}
           {error && <Error error={error} />}
           {fetching && <Fetching />}
