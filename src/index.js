@@ -1,10 +1,16 @@
+// import react
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
-import App from './components/App';
-import * as serviceWorker from './serviceWorker';
+// import redux
 import { Provider } from 'react-redux'
+// import the store
 import { store } from './store'
+// import the main component
+import App from './components/App';
+// import styles
+import './styles/index.css';
+// import serviceWorker
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
