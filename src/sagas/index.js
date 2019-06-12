@@ -11,22 +11,25 @@ export function* watcherSaga() {
 }
 
 function* workerSaga(action) {
-  if (action.number === "") {
-    throw new Error("You have to provide a number or type random.");
-  }
-  if (
-    !/^[+-]?[0-9]+[.]?[0-9]*$/.test(action.number) &&
-    action.number !== "random"
-  ) {
-    throw new Error("You have to provide a number or type random.");
-  }
-  if (action.number !== "random" && !Number.isInteger(Number(action.number))) {
-    throw new Error("The number must be a whole number.");
-  }
-  if (action.number !== "random" && !Number(action.number) < 0) {
-    throw new Error("The number must be positive.");
-  }
   try {
+    if (action.number === "") {
+      throw new Error("You have to provide a number or type random.");
+    }
+    if (
+      !/^[+-]?[0-9]+[.]?[0-9]*$/.test(action.number) &&
+      action.number !== "random"
+    ) {
+      throw new Error("You have to provide a number or type random.");
+    }
+    if (
+      action.number !== "random" &&
+      !Number.isInteger(Number(action.number))
+    ) {
+      throw new Error("The number must be a whole number.");
+    }
+    if (action.number !== "random" && !Number(action.number) < 0) {
+      throw new Error("The number must be positive.");
+    }
     const response = yield call(() => fetchData(action.number));
     const message = response.data;
     if (message.includes("Bad Gateway")) {
