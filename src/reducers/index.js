@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     case API_CALL_SUCCESS:
       return { fetching: false, message: action.message, error: null };
     case API_CALL_FAILURE:
-      return { fetching: false, message: null, error: action: error };
+      return { fetching: false, message: null, error: action.error };
     default:
       return state;
   }
