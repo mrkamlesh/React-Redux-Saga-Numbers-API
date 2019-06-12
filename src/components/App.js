@@ -6,6 +6,7 @@ import { API_CALL_REQUEST } from "../actions/actionTypes";
 import Message from "./Message";
 import Error from "./Error";
 import Fetching from "./Fetching";
+import Init from "./Init";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,12 +18,14 @@ class App extends React.Component {
     this.props.getData(inputValue);
   };
   render() {
+    const { message, error, fetching } = this.props;
     return (
       <div className="App">
         <header className="App-header">
-          {this.props.message && <Message message={this.props.message} />}
-          {this.props.error && <Error error={this.props.error} />}
-          {this.props.fetching && <Fetching />}
+          {message && <Message message={message} />}
+          {error && <Error error={error} />}
+          {fetching && <Fetching />}
+          {!message && !error && !fetching && <Init />}
           <Form fetchMessage={this.fetchMessage} inputField={this.inputField} />
         </header>
       </div>
