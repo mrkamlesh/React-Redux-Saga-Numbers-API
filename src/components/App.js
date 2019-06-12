@@ -3,6 +3,7 @@ import "../styles/App.css";
 import Form from "./Form";
 import { connect } from "react-redux";
 import { API_CALL_REQUEST } from "../actions/actionTypes";
+import Message from "./Message";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          {this.props.message && <Message message={this.props.message} />}
           <Form fetchMessage={this.fetchMessage} inputField={this.inputField} />
         </header>
       </div>
