@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { API_CALL_REQUEST } from "../actions/actionTypes";
 import Message from "./Message";
 import Error from "./Error";
+import Fetching from "./Fetching";
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends React.Component {
         <header className="App-header">
           {this.props.message && <Message message={this.props.message} />}
           {this.props.error && <Error error={this.props.error} />}
+          {this.props.fetching && <Fetching />}
           <Form fetchMessage={this.fetchMessage} inputField={this.inputField} />
         </header>
       </div>
