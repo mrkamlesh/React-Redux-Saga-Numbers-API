@@ -30,7 +30,8 @@ function* workerSaga(action) {
     if (action.number !== "random" && !Number(action.number) < 0) {
       throw new Error("The number must be positive.");
     }
-    const response = yield call(() => fetchData(action.number));
+    // const response = yield call(() => fetchData(action.number));
+    const response = yield call(fetchData, action.number);
     const message = response.data;
     if (message.includes("Bad Gateway")) {
       throw new Error("Bad response from the server. Try again.");

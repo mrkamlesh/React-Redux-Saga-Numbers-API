@@ -9,34 +9,25 @@ import Fetching from "./Fetching";
 import Init from "./Init";
 import Header from "./Header";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.inputField = React.createRef();
-  }
-  fetchMessage = () => {
-    const inputValue = this.inputField.current.value;
-    this.props.getData(inputValue);
-  };
-  render() {
-    const { message, error, fetching } = this.props;
-    return (
-      <div className="App">
-        <header className="App-header">
-          <Header />
-          {message && <Message message={message} />}
-          {error && <Error error={error} />}
-          {fetching && <Fetching />}
-          {!message && !error && !fetching && <Init />}
-          <Form
-            fetchMessage={this.fetchMessage}
-            inputField={this.inputField}
-            fetching={fetching}
-          />
-        </header>
-      </div>
-    );
-  }
+function App(props) {
+  const { message, error, fetching, getData } = props;
+  const inputField = React.useRef();
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header />
+        {message && <Message message={message} />}
+        {error && <Error error={error} />}
+        {fetching && <Fetching />}
+        {!message && !error && !fetching && <Init />}
+        <Form
+          fetchMessage={getData}
+          inputField={inputField}
+          fetching={fetching}
+        />
+      </header>
+    </div>
+  );
 }
 
 const mapStateToProps = state => {
