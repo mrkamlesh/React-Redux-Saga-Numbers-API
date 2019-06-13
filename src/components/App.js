@@ -14,10 +14,6 @@ class App extends React.Component {
     super(props);
     this.inputField = React.createRef();
   }
-  fetchMessage = () => {
-    const inputValue = this.inputField.current.value;
-    this.props.getData(inputValue);
-  };
   render() {
     const { message, error, fetching } = this.props;
     return (
@@ -29,7 +25,7 @@ class App extends React.Component {
           {fetching && <Fetching />}
           {!message && !error && !fetching && <Init />}
           <Form
-            fetchMessage={this.fetchMessage}
+            fetchMessage={this.props.getData}
             inputField={this.inputField}
             fetching={fetching}
           />

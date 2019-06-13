@@ -17,7 +17,7 @@ export default function Form(props) {
             Fetching...
           </button>
         ) : (
-            <button className="btn btn-primary" onClick={props.fetchMessage}>
+            <button className="btn btn-primary" onClick={() => props.fetchMessage(props.inputField.current.value)}>
               Click to get info
           </button>
           )}
