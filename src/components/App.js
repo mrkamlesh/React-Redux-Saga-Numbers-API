@@ -11,7 +11,7 @@ import Header from "./Header";
 
 function App(props) {
   const { message, error, fetching, getData } = props;
-  const inputField = React.useRef();
+  const inputField = React.useRef(null);
   return (
     <div className="App">
       <header className="App-header">
