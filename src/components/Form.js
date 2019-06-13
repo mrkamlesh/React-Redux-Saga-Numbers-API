@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Form.scss";
 
 export default function Form(props) {
   return (
@@ -16,10 +17,10 @@ export default function Form(props) {
             Fetching...
           </button>
         ) : (
-          <button className="btn btn-primary" onClick={props.fetchMessage}>
-            Click to get info
+            <button className="btn btn-primary" onClick={props.fetchMessage}>
+              Click to get info
           </button>
-        )}
+          )}
       </div>
     </>
   );

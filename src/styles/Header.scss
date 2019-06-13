@@ -1,0 +1,42 @@
+.header, .subheader {
+  font-family: 'Lobster', cursive;
+}
+
+.header {
+  position: relative;
+}
+
+.subheader {
+  font-size: 2.5rem;
+}
+
+.number {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+#no-a {
+  position: absolute;
+  left: 35px;
+  bottom: 40px;
+  transform: rotate(20deg);
+}
+#no-b {
+  position: absolute;
+  right: 55px;
+  bottom: 20px;
+  transform: rotate(-65deg);
+}
+#no-c {
+  position: absolute;
+  right: 89px;
+  top: -25px;
+  transform: rotate(35deg);
+}
+#no-d {
+  position: absolute;
+  left: 20px;
+  bottom: 0px;
+  transform: rotate(-42deg);
+}
