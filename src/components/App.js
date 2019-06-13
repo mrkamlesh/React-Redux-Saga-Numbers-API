@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/App.css";
+import "../styles/App.scss";
 import Form from "./Form";
 import { connect } from "react-redux";
 import { API_CALL_REQUEST } from "../actions/actionTypes";

@@ -8,7 +8,7 @@ import { store } from "./store";
 // import the main component
 import App from "./components/App";
 // import styles
-import "./styles/index.css";
+import "./styles/index.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 // import serviceWorker
