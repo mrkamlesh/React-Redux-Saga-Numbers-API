@@ -2,6 +2,7 @@
   "name": "23-numbers-sklinkusch",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://fbw-12.github.io/23-numbers-sklinkusch/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "axios": "^0.19.0",
@@ -19,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
